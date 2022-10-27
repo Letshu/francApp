@@ -22,7 +22,6 @@ def getUserFollower(userName):
     followers = client.get_users_followers(id=userId)
     followers_tweets = {}
     for i,follower in enumerate(followers.data):
-        
         tweets_posted = getFollowerTweets(str(follower))
         if tweets_posted is not None:
             followers_tweets[str(follower)]= tweets_posted
