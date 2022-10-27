@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>William's Tweets</title>
+    <style>
+      body {
+        margin: auto;
+        width: 1024px;
+        padding: 10px;
+        background-color: #ebebeb;
+        font-size: 20px;
+        font-family: Verdana;
+      }
+      .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        border-radius: 5px; /* 5px rounded corners */
+      }
+
+      
+    </style>
+  </head>
+  <body>
+    <h1>William's tweets are as follow:</h1>
+    <div>
+      <ul>
+        {% for tweet in tweets %}
+        <li>{{tweet}}</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <h1>William's followers and their tweets</h1>
+    <div>
+      {% for name,texts in followers.items() %}
+      <div class="card">
+        <h3>{{name}}</h3>
+          {% for text in texts %}
+          <p>{{text}}</p>
+          {% endfor %} 
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>
